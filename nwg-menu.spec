@@ -36,6 +36,6 @@ The commands attached to them may be defined in the nwg-panel settings or given 
 go build -o bin/nwg-menu *.go
   
 %install
-%make_install
+go install
 
 %files
