@@ -41,6 +41,7 @@ go build -o bin/nwg-menu *.go
 #go install
 #make_install
 
+mkdir -p /usr/share/nwg-menu
 install -d %{buildroot}/usr/share/nwg-menu/desktop-directories
 install -Dm644 -t %{buildroot}/usr/share/nwg-menu/desktop-directories/ nwg-menu-%{version}/desktop-directories/*
 install -Dm644 -t %{buildroot}/usr/share/nwg-menu nwg-menu-%{version}/menu-start.css
