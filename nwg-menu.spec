@@ -36,6 +36,14 @@ The commands attached to them may be defined in the nwg-panel settings or given 
 go build -o bin/nwg-menu *.go
   
 %install
-go install
+# Can't install files with auto-installing.
+# Recommended by golang devs "go install" installing 0 files. While make_install failing with no permission to create dir.
+#go install
+#make_install
+
+install -d %{buildroot}/usr/share/nwg-menu/desktop-directories
+install -Dm644 -t %{buildroot}/usr/share/nwg-menu/desktop-directories/ nwg-menu-%{version}/desktop-directories/*
+install -Dm644 -t %{buildroot}/usr/share/nwg-menu nwg-menu-%{version}/menu-start.css
+install -Dm755 -t %{buildroot}/usr/bin nwg-menu-%{version}/bin/nwg-menu
 
 %files
