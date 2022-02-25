@@ -40,8 +40,9 @@ go build -o bin/nwg-menu *.go
 # Recommended by golang devs "go install" installing 0 files. While make_install failing with no permission to create dir.
 #go install
 #make_install
-%gosrc
-%gofilelist
+#gosrc
+#gofilelist
+%goinstall
 
 #mkdir -p /usr/share/nwg-menu
 #install -d %{buildroot}/usr/share/nwg-menu/desktop-directories
