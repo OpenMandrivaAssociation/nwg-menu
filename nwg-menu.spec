@@ -50,3 +50,6 @@ cp -r desktop-directories %{buildroot}%{_datadir}/%{name}
 install -m644 menu-start.css %{buildroot}%{_datadir}/%{name}
 
 %files
+%{_bindir}/nwg-menu
+%{_datadir}/nwg-menu/desktop-directories/
+%{_datadir}/nwg-menu/menu-start.css
