@@ -39,7 +39,7 @@ The commands attached to them may be defined in the nwg-panel settings or given 
   
 %build
 export GOPATH=$(pwd)/.godeps:$(pwd)/gopath
-go build
+go build -o bin/%{name}
 
 %install
 export GOPATH=$(pwd)/.godeps:$(pwd)/gopath
