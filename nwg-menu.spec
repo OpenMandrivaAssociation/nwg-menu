@@ -42,10 +42,11 @@ export GOPATH=$(pwd)/.godeps:$(pwd)/gopath
 go build
 
 %install
-install -Dm755 "build/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-install -Dm 644 menu-start.css "${pkgdir}/usr/share/${pkgname}/menu-start.css"
-install -Dm 644 desktop-directories/* -t "${pkgdir}/usr/share/${pkgname}/desktop-directories/"
-install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-install -Dm 644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+export GOPATH=$(pwd)/.godeps:$(pwd)/gopath
+mkdir -p %{buildroot}%{_bindir}
+install -m755 bin/%{name} %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_datadir}/%{name}
+cp -r desktop-directories %{buildroot}%{_datadir}/%{name}
+install -m644 menu-start.css %{buildroot}%{_datadir}/%{name}
 
 %files
