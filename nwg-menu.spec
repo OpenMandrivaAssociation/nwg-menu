@@ -1,7 +1,7 @@
 %undefine _debugsource_packages
 
 Name:       nwg-menu
-Version:    0.1.6
+Version:    0.1.7
 Release:    1
 Summary:    MenuStart plugin to nwg-panel, also capable of working standalone
 Group:      System/X11/Utilities/NWG 
@@ -12,7 +12,7 @@ Source0:     https://github.com/nwg-piotr/nwg-menu/archive/refs/tags/v%{version}
 # export GOPATH=$(pwd)/.godeps
 # go mod download
 # tar cJf ../../godeps-for-nwg-dock-hyprland-0.3.2.tar.xz .godeps
-Source1:        godeps-for-nwg-menu-0.1.6.tar.xz
+Source1:        godeps-for-nwg-menu-%{version}.tar.xz
 BuildRequires:  golang
 BuildRequires:  compiler(go-compiler)
 BuildRequires:  pkgconfig(gtk-layer-shell-0)
